@@ -1,0 +1,39 @@
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24vh;
+  margin-top: 5vh;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  height: 8vh;
+  margin-top: 2vh;
+  width: 100%;
+}
+
+.header > p {
+  color: #f0f0f0;
+  font-weight: 700;
+  font-size: 3.2vh;
+  margin: auto;
+}
+
+.image {
+  align-self: center;
+  height: fit-content;
+  margin-top: 5vh;
+  width: fit-content;
+}
+
+.page {
+  background-color: #0a0a0a;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 24vw;
+}

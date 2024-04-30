@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+
+import "./App.css";
+import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
+import { ServiceContext } from "./utils/ServiceContext";
+import { request, requestWithAccessToken } from "./utils/client";
+
+const getServiceObject = (navigate) => {
+  return {
+    request: request(navigate),
+    requestWithAccessToken: requestWithAccessToken(navigate),
+  };
+};
 
 function App() {
+  const navigate = useNavigate();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ServiceContext.Provider value={getServiceObject(navigate)}>
+      <Routes>
+        <Route exact path="/dashboard/*" element={<Dashboard />} />
+        <Route exact path="/auth/*" element={<Auth />} />
+        <Route exact path="/*" element={<h1> not found app</h1>} />
+      </Routes>
+    </ServiceContext.Provider>
   );
 }
 
-export default App;
+export default function Wrapper() {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}

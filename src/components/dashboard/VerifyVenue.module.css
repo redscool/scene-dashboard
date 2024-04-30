@@ -1,0 +1,89 @@
+.mainContainer {
+  align-items: center;
+  background-color: var(--bg-clr);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.section {
+  border: 1px solid var(--label-font-color);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  margin-top: 10vh;
+  position: relative;
+  width: 80vw;
+}
+
+.label {
+  background-color: var(--color1);
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  display: flex;
+  height: 8vh;
+  left: -1px;
+  padding: 0 3vw;
+  position: absolute;
+  top: -1px;
+  width: fit-content;
+}
+
+.label > p {
+  color: var(--color21);
+  font-size: 2.6vh;
+  font-weight: 700;
+  margin: auto;
+}
+
+.field {
+  align-items: flex-end;
+  align-self: center;
+  border-bottom: 2px solid var(--color15);
+  box-sizing: border-box;
+  display: flex;
+  height: 12vh;
+  justify-content: space-between;
+  margin-top: 12vh;
+  padding: 0 2vw;
+  width: 80%;
+}
+
+.fieldLabel > p {
+  color: var(--color21);
+  font-size: 2.6vh;
+  font-weight: 700;
+}
+
+.fieldInput > p {
+  background-color: transparent;
+  border: none;
+  color: var(--color21);
+  font-size: 2.6vh;
+  font-weight: 400;
+  margin-bottom: 2vh;
+  outline: none;
+  width: 24vw;
+}
+
+.button {
+  align-self: center;
+  background-color: var(--color1);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  height: 6vh;
+  margin-bottom: 5vh;
+  margin-top: 10vh;
+  width: 10vw;
+}
+
+.button > p {
+  color: var(--color21);
+  font-size: 2.4vh;
+  font-weight: 500;
+  margin: auto;
+}

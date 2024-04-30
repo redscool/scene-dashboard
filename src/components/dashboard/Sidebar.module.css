@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  z-index: 100;
+}
+
+.mainContainer {
+  background: linear-gradient(
+    to right,
+    var(--side-bar-bg-color),
+    var(--side-bar-bg-color) 1.13%
+  );
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 6vw;
+}
+
+.gradient {
+  height: 100%;
+  left: 5.9vw;
+  position: absolute;
+  transition: width 0.3s ease-in-out;
+}
+
+.open {
+  background: linear-gradient(
+    90.79deg,
+    var(--side-bar-bg-color) 1.13%,
+    rgba(26, 29, 31, 0) 108.07%
+  );
+  height: 100vh;
+  width: 20vw;
+}
+
+.close {
+  background: linear-gradient(
+    90.79deg,
+    var(--side-bar-bg-color) 1.13%,
+    rgba(26, 29, 31, 0) 108.07%
+  );
+  height: 100%;
+  width: 0;
+}
+
+.logo {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 20vh;
+  justify-content: center;
+}
+
+.logoImg {
+  width: 4.5vw;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
+  margin-left: 1vw;
+  overflow-x: visible;
+  width: fit-content;
+  z-index: 102;
+}
+
+.links {
+  height: 60vh;
+  width: fit-content;
+}
+
+.navlink {
+  align-items: center;
+  color: var(--color21);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  height: 7vh;
+  justify-items: center;
+  margin-bottom: 2vh;
+  overflow-y: visible;
+  text-decoration: none;
+  text-wrap: nowrap;
+  z-index: 101;
+}
+
+.displayText {
+  transition: opacity 0.3s ease, width 0.3s, font-size 0.3s;
+}
+
+.showText {
+  font-family: Inter;
+  font-size: 1.25vw;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 1.875vw;
+  margin-left: 1vw;
+  padding-bottom: 0.5vh;
+  padding-right: 2vw;
+  opacity: 1;
+  text-align: left;
+}
+
+.hoveredText {
+  color: var(--label-font-color);
+  font-size: 1.625vw;
+  font-weight: 700;
+}
+
+.hideText {
+  font-family: Inter;
+  font-size: 1.25vw;
+  font-weight: 300;
+  letter-spacing: 0em;
+  line-height: 1.875vw;
+  margin-left: 1vw;
+  opacity: 0;
+  padding-bottom: 0.5vh;
+  padding-right: 2vw;
+  text-align: left;
+  width: 0px;
+}
+
+.linkImg {
+  width: 2vw;
+}
+
+.hoveredImg {
+  width: 2.2vw;
+}
+
+.notificaitonIndicator {
+  position: relative;
+  top: -1vw;
+}
+
+.selectedText {
+  color: var(--label-font-color);
+  font-weight: 700;
+}

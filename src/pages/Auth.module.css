@@ -1,0 +1,8 @@
+.page {
+  align-items: center;
+  background-color: var(--bg-clr);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}

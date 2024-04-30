@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+.light-theme {
+  --para-color: var(--color13);
+  --btn-text-color: var(--color26);
+  --button-text-color: var(--color20);
+  --bg-clr: var(--color24);
+  --header-bg-color: var(--color21);
+  --label-font-color: var(--color9);
+  --primary-color: var(--color1);
+  --normal-text-color: var(--color18);
+  --input-bg-color: var(--color23);
+  --input-field-placeholder-color: var(--color13);
+  --box-shadow-color: var(--color31);
+  --google-button-color: var(--color30);
+  --google-button-text-color: var(--color24);
+  --light-container-bg-color: var(--color9);
+  --live-event-banner-bg-color: var(--color21);
+  --upcoming-events-container-bg-color: var(--color21);
+  --switch-label-font-color: var(--color23);
+  --side-bar-bg-color: var(--color18);
+  --reorder-btn-bg-color: var(--color24);
+  --space-tile-bg-color: var(--color23);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+#root {
+  --color1: #fda92d;
+  --color2: #161c24;
+  --color3: #212b36;
+  --color4: #919eab;
+  --color5: #fddc2d;
+  --color6: #ff4127;
+  --color7: #121212;
+  --color8: #dc0000;
+  --color9: #1a1d1f;
+  --color10: #aad6ee;
+  --color11: #afe5b1;
+  --color12: #ffbf90;
+  --color13: #383d44;
+  --color14: #788dff;
+  --color15: #af96f6;
+  --color16: #8e97a0;
+  --color17: #272b30;
+  --color18: #868b90;
+  --color19: #2c2f32;
+  --color20: #1e1e1e;
+  --color21: #efefef;
+  --color22: #868b90; /* same as color 18*/
+  --color23: #eceff2;
+  --color24: #fcfcfc;
+  --color25: #d0d0d0;
+  --color26: #ffffff;
+  --color27: #61f3f3;
+  --color28: #133541;
+  --color29: #5e4d33;
+  --color30: #000000;
+  --color31: rgba(239, 239, 239, 1);
+  --color32: rgba(239, 239, 239, 50%);
+  --color33: rgba(30, 30, 30, 1);
+  --tab-font-size: 3vh;
+  --border-radius: 8px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  --authentication-label-font-size: 1.6vh;
+  --authentication-heading-font-size: 3vh;
+  --para-color: var(--color26);
+  --btn-text-color: var(--color26);
+  --button-text-color: var(--color20);
+  --bg-clr: var(--color9);
+  --header-bg-color: var(--color7);
+  --label-font-color: var(--color21);
+  --primary-color: var(--color1);
+  --input-bg-color: var(--color18);
+  --normal-text-color: var(--color18);
+  --input-field-placeholder-color: var(--color13);
+  --box-shadow-color: var(--color31);
+  --google-button-color: var(--color26);
+  --google-button-text-color: var(--color2);
+  --light-container-bg-color: var(--color16);
+  --live-event-banner-bg-color: var(--color21);
+  --upcoming-events-container-bg-color: var(--color9);
+  --switch-label-font-color: var(--color9);
+  --side-bar-bg-color: var(--color7);
+  --reorder-btn-bg-color: var(--color17);
+  --space-tile-bg-color: var(--color3);
 }
