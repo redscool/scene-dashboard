@@ -1,0 +1,82 @@
+.fieldContainer,
+.areaContainer {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  margin: 1vh auto;
+}
+
+.fieldLabel {
+  color: var(--label-font-color);
+  font-size: var(--authentication-label-font-size);
+  margin-left: 0.5vw;
+  margin-bottom: 0.1vh;
+}
+
+.fieldLabel>p {
+  margin: 0;
+}
+
+.fieldInput {
+  border-radius: var(--border-radius);
+  padding-left: 1vw;
+  margin-top: 0vh;
+  height: 5vh;
+  outline: none;
+  border: none;
+  background-color: var(--input-bg-color);
+  font-weight: 700;
+  color: var(--input-field-placeholder-color);
+}
+
+.fieldInput::placeholder {
+  font-weight: 700;
+  color: var(--input-field-placeholder-color);
+  font-size: 1.5vh;
+}
+
+.fieldInput::-webkit-calendar-picker-indicator {
+  margin-right: 2vw;
+}
+
+.areaContainer {
+  min-height: 5vh;
+  border-radius: var(--border-radius);
+  background-color: var(--input-bg-color);
+}
+
+.textarea {
+  margin: auto;
+  width: 90%;
+  resize: none;
+  overflow-y: scroll;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  color: var(--input-field-placeholder-color);
+  background-color: transparent;
+  font-size: 2vh;
+}
+
+.textarea::placeholder {
+  font-weight: 700;
+  color: var(--input-field-placeholder-color);
+  font-size: 2vh;
+}
+
+.textarea::-webkit-scrollbar {
+  width: 0.2vw;
+}
+
+.textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}

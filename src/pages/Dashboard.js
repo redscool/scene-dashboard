@@ -6,6 +6,7 @@ import Sidebar from "../components/dashboard/Sidebar";
 import styles from "./Dashboard.module.css";
 import VerifyVenue from "../components/dashboard/VerifyVenue";
 import Home from "../components/dashboard/Home";
+import FeatureFlag from "../components/dashboard/featureFlag";
 
 export default function Dashboard() {
   const links = [
@@ -16,6 +17,10 @@ export default function Dashboard() {
     {
       href: "verifyVenue",
       displayText: "Verify Venue",
+    },
+    {
+      href: "featureFlag/search",
+      displayText: "Feature Flag",
     },
   ];
   const location = useLocation();
@@ -30,6 +35,7 @@ export default function Dashboard() {
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/addOrganiser" element={<AddUser />} />
         <Route exact path="/verifyVenue" element={<VerifyVenue />} />
+        <Route exact path="/featureFlag/*" element={<FeatureFlag />} />
         <Route path="/*" element={<span> Not found </span>} />
       </Routes>
     </div>
