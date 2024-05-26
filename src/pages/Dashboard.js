@@ -5,6 +5,7 @@ import AddUser from "../components/dashboard/AddUser";
 import Sidebar from "../components/dashboard/Sidebar";
 import styles from "./Dashboard.module.css";
 import VerifyVenue from "../components/dashboard/VerifyVenue";
+import Home from "../components/dashboard/Home";
 
 export default function Dashboard() {
   const links = [
@@ -26,6 +27,7 @@ export default function Dashboard() {
     <div className={styles.page}>
       <Sidebar selected={selected} links={links} />
       <Routes>
+        <Route exact path="/" element={<Home/>} />
         <Route exact path="/addOrganiser" element={<AddUser />} />
         <Route exact path="/verifyVenue" element={<VerifyVenue />} />
         <Route path="/*" element={<span> Not found </span>} />
