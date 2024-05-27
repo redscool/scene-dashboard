@@ -1,0 +1,33 @@
+.fieldContainer {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldLabel {
+  color: var(--label-font-color);
+  font-size: 2.4vh;
+  margin-left: 0.5vw;
+  margin-bottom: 0.1vh;
+}
+
+.fieldLabel>p {
+  margin: 0;
+}
+
+.fieldInput {
+  border-radius: var(--border-radius);
+  padding-left: 1vw;
+  margin-top: 0vh;
+  height: 5vh;
+  outline: none;
+  border: none;
+  background: var(--header-bg-color);
+  font-weight: 700;
+  color: var(--input-field-placeholder-color);
+}
+
+.fieldInput::placeholder {
+  font-weight: 700;
+  color: var(--input-field-placeholder-color);
+}

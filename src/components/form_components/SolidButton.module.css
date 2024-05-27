@@ -1,0 +1,15 @@
+.container {
+  background-color: #e1ff41;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  height: 5vh;
+  width: 10vw;
+}
+
+.container > p {
+  color: #1e1e1e;
+  font-size: 2.4vh;
+  font-weight: 700;
+  margin: auto;
+}
