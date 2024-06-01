@@ -56,18 +56,20 @@ export default function VerifyVenue() {
               </div>
             </div>
           ))}
-          <div className={styles.field} key={"map"}>
-            <div className={styles.fieldLabel}>
-              <p>Location</p>
+          {item["location"] && (
+            <div className={styles.field} key={"map"}>
+              <div className={styles.fieldLabel}>
+                <p>Location</p>
+              </div>
+              <a
+                className={styles.fieldInput}
+                href={`https://maps.google.com/maps?q=${item["location"].lat},${item["location"].lng}&hl=es&z=14&amp`}
+                target="_blank"
+              >
+                <p>{JSON.stringify(item["location"])}</p>
+              </a>
             </div>
-            <a
-              className={styles.fieldInput}
-              href={`https://maps.google.com/maps?q=${item["location"].lat},${item["location"].lng}&hl=es&z=14&amp`}
-              target="_blank"
-            >
-              <p>{JSON.stringify(item["location"])}</p>
-            </a>
-          </div>
+          )}
           <div className={styles.button} onClick={() => approveHandler(item)}>
             <p>Approve</p>
           </div>
