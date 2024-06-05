@@ -1,38 +1,47 @@
 .mainContainer {
-    align-items: center;
-    background-color: var(--bg-clr);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow-y: scroll;
-    width: 100%;
+  align-items: center;
+  background-color: var(--bg-clr);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.mainContainer::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+.mainContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
 }
 
 .searchSection {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 2vh 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 0;
 }
 
 .searchRow {
-    margin: 1vh 4vw;
-    display: flex;
-    flex-direction: row;
-    padding: 1vh 0;
+  margin: 1vh 4vw;
+  display: flex;
+  flex-direction: row;
+  padding: 1vh 0;
 }
 
-.searchSection>h1 {
-    color: var(--normal-text-color);
-    margin: 0 4vw;
+.searchSection > h1 {
+  color: var(--normal-text-color);
+  margin: 0 4vw;
 }
 
 .horizotalDivider {
-    background-color: var(--light-container-bg-color);
-    height: 1px;
-    width: 100%;
+  background-color: var(--light-container-bg-color);
+  height: 1px;
+  width: 100%;
 }
 
 .createBtn {
-    background-color: var(--color1);
+  background-color: var(--color1);
 }

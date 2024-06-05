@@ -1,99 +1,108 @@
 .mainContainer {
-    align-items: center;
-    background-color: var(--bg-clr);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow-y: scroll;
-    width: 100%;
+  align-items: center;
+  background-color: var(--bg-clr);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
+  width: 100%;
 }
 
-.searchSection>h1 {
-    color: var(--normal-text-color);
+.mainContainer::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+.mainContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+}
+
+.searchSection > h1 {
+  color: var(--normal-text-color);
 }
 
 .horizotalDivider {
-    background-color: var(--light-container-bg-color);
-    height: 1px;
-    width: 100%;
+  background-color: var(--light-container-bg-color);
+  height: 1px;
+  width: 100%;
 }
 
 .section {
-    border: 1px solid var(--label-font-color);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    margin-top: 10vh;
-    position: relative;
-    width: 80vw;
+  border: 1px solid var(--label-font-color);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  margin-top: 10vh;
+  position: relative;
+  width: 80vw;
 }
 
 .label {
-    background-color: var(--color1);
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    display: flex;
-    height: 8vh;
-    left: -1px;
-    padding: 0 3vw;
-    position: absolute;
-    top: -1px;
-    width: fit-content;
+  background-color: var(--color1);
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  display: flex;
+  height: 8vh;
+  left: -1px;
+  padding: 0 3vw;
+  position: absolute;
+  top: -1px;
+  width: fit-content;
 }
 
-.label>p {
-    color: var(--color21);
-    font-size: 2.6vh;
-    font-weight: 700;
-    margin: auto;
+.label > p {
+  color: var(--color21);
+  font-size: 2.6vh;
+  font-weight: 700;
+  margin: auto;
 }
 
 .field {
-    align-items: flex-end;
-    align-self: center;
-    border-bottom: 2px solid var(--color15);
-    box-sizing: border-box;
-    display: flex;
-    height: 12vh;
-    justify-content: space-between;
-    margin-top: 12vh;
-    padding: 0 2vw;
-    width: 80%;
+  align-items: flex-end;
+  align-self: center;
+  border-bottom: 2px solid var(--color15);
+  box-sizing: border-box;
+  display: flex;
+  height: 12vh;
+  justify-content: space-between;
+  margin-top: 12vh;
+  padding: 0 2vw;
+  width: 80%;
 }
 
-.fieldLabel>p {
-    color: var(--color21);
-    font-size: 2.6vh;
-    font-weight: 700;
+.fieldLabel > p {
+  color: var(--color21);
+  font-size: 2.6vh;
+  font-weight: 700;
 }
 
 .buttonRow {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .button {
-    align-self: center;
-    background-color: var(--color1);
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    height: 6vh;
-    margin-bottom: 5vh;
-    margin-top: 10vh;
-    width: 10vw;
+  align-self: center;
+  background-color: var(--color1);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  height: 6vh;
+  margin-bottom: 5vh;
+  margin-top: 10vh;
+  width: 10vw;
 }
 
-.button>p {
-    color: var(--color21);
-    font-size: 2.4vh;
-    font-weight: 500;
-    margin: auto;
+.button > p {
+  color: var(--color21);
+  font-size: 2.4vh;
+  font-weight: 500;
+  margin: auto;
 }
 
 .delete {
-    background-color: red;
+  background-color: red;
 }

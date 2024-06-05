@@ -1,0 +1,101 @@
+.container {
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  margin: 1vh auto;
+  user-select: none;
+  position: relative;
+}
+/* 100-15 */
+.label {
+  display: flex;
+  width: 100%;
+  height: 3vh;
+}
+.label > p {
+  margin: auto;
+  margin-left: 6.66%;
+  font-size: var(--authentication-label-font-size);
+  color: var(--label-font-color);
+  font-family: Inter;
+}
+
+.dropdownHeader {
+  display: flex;
+  width: 100%;
+  height: 5vh;
+  border-radius: var(--border-radius);
+  background-color: var(--input-bg-color);
+  cursor: pointer;
+}
+
+.dropdownHeader > p {
+  margin: auto;
+  font-size: 2.4vh;
+  margin-left: 6.66%;
+  font-family: Inter;
+  font-weight: 500;
+}
+
+.dropdownHeader > img {
+  margin: auto;
+  margin-right: 6.66%;
+  width: 10%;
+  font-family: Inter;
+}
+
+.dropdownBody {
+  z-index: 10000;
+  width: 100%;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 9vh;
+  background: var(--header-bg-color);
+  max-height: 30vh;
+  overflow-y: auto;
+}
+
+.margin {
+  margin-top: 6vh;
+}
+
+.dropdownBody::-webkit-scrollbar,
+.messagesContainer::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+.dropdownBody::-webkit-scrollbar,
+.messagesContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+}
+
+.dropdownItem:hover {
+  background: rgba(134, 139, 144, 0.5);
+}
+
+.dropdownItem {
+  cursor: pointer;
+  margin: 0.5vh auto;
+  height: 6vh;
+  width: 93.33%;
+  border-radius: var(--border-radius);
+  display: flex;
+}
+.dropdownItem > p {
+  font-size: 2.4vh;
+  color: var(--para-color);
+  margin: auto auto auto 6.67%;
+  font-family: Inter;
+}
+
+.visible {
+  display: none;
+}
+
+.selectedItem {
+  background: var(--bg-clr);
+}
