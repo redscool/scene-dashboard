@@ -8,6 +8,15 @@
   width: 100%;
 }
 
+.mainContainer::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+.mainContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+}
+
 .section {
   border: 1px solid var(--label-font-color);
   border-radius: 20px;

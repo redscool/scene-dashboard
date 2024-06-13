@@ -7,6 +7,8 @@ import styles from "./Dashboard.module.css";
 import VerifyVenue from "../components/dashboard/VerifyVenue";
 import Home from "../components/dashboard/Home";
 import FeatureFlag from "../components/dashboard/featureFlag";
+import TopEvents from "../components/dashboard/TopEvents";
+import TopVenues from "../components/dashboard/TopVenues";
 
 export default function Dashboard() {
   const links = [
@@ -22,6 +24,14 @@ export default function Dashboard() {
       href: "featureFlag/search",
       displayText: "Feature Flag",
     },
+    {
+      href: "topEvents",
+      displayText: "Top Events",
+    },
+    {
+      href: "topVenues",
+      displayText: "Top Venues",
+    },
   ];
   const location = useLocation();
   const [selected, setSelected] = useState("");
@@ -32,10 +42,12 @@ export default function Dashboard() {
     <div className={styles.page}>
       <Sidebar selected={selected} links={links} />
       <Routes>
-        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/addOrganiser" element={<AddUser />} />
         <Route exact path="/verifyVenue" element={<VerifyVenue />} />
         <Route exact path="/featureFlag/*" element={<FeatureFlag />} />
+        <Route exact path="/topEvents/" element={<TopEvents />} />
+        <Route exact path="/topVenues/" element={<TopVenues />} />
         <Route path="/*" element={<span> Not found </span>} />
       </Routes>
     </div>
