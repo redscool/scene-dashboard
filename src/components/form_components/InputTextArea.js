@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./InputField.module.css";
+import styles from "./InputTextArea.module.css";
 export default function InputTextArea({ state, setState, placeholder, id }) {
   const [rows, setRows] = useState(1);
   const handleChange = (event) => {
@@ -17,6 +17,7 @@ export default function InputTextArea({ state, setState, placeholder, id }) {
         placeholder={placeholder}
         onChange={handleChange}
         className={styles.textarea}
+        spellCheck="false"
         rows={rows > 4 ? 4 : rows}
         id={id}
       />
