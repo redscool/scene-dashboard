@@ -9,6 +9,7 @@ import Home from "../components/dashboard/Home";
 import FeatureFlag from "../components/dashboard/featureFlag";
 import TopEvents from "../components/dashboard/TopEvents";
 import TopVenues from "../components/dashboard/TopVenues";
+import Queries from "../components/dashboard/queries";
 
 export default function Dashboard() {
   const links = [
@@ -32,6 +33,10 @@ export default function Dashboard() {
       href: "topVenues",
       displayText: "Top Venues",
     },
+    {
+      href: "queries/list",
+      displayText: "Queries",
+    },
   ];
   const location = useLocation();
   const [selected, setSelected] = useState("");
@@ -48,6 +53,7 @@ export default function Dashboard() {
         <Route exact path="/featureFlag/*" element={<FeatureFlag />} />
         <Route exact path="/topEvents/" element={<TopEvents />} />
         <Route exact path="/topVenues/" element={<TopVenues />} />
+        <Route exact path="/queries/*" element={<Queries />} />
         <Route path="/*" element={<span> Not found </span>} />
       </Routes>
     </div>

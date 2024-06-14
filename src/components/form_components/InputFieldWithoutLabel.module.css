@@ -24,7 +24,7 @@
   border: none;
   background: var(--header-bg-color);
   font-weight: 700;
-  color: var(--input-field-placeholder-color);
+  color: var(--label-font-color);
 }
 
 .fieldInput::placeholder {
