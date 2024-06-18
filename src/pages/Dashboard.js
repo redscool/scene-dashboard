@@ -37,6 +37,8 @@ export default function Dashboard() {
     {
       href: "updateEvent",
       displayText: "Update Event",
+    },
+    {
       href: "queries/list",
       displayText: "Queries",
     },
