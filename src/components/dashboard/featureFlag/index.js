@@ -10,5 +10,4 @@ export default function FeatureFlag() {
             <Route path="/*" element={<span> Not found </span>} />
         </Routes>
     )
-
 }

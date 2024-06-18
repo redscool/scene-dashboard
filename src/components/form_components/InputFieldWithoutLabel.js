@@ -3,6 +3,7 @@ export default function InputFieldWithoutLabel({
   placeholder,
   state,
   setState,
+  type = "text"
 }) {
   return (
     <div className={styles.fieldContainer}>
@@ -11,6 +12,7 @@ export default function InputFieldWithoutLabel({
         className={styles.fieldInput}
         onChange={(e) => setState(e.target.value)}
         value={state}
+        type={type}
       />
     </div>
   );
