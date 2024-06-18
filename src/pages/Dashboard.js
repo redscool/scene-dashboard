@@ -9,6 +9,7 @@ import Home from "../components/dashboard/Home";
 import FeatureFlag from "../components/dashboard/featureFlag";
 import TopEvents from "../components/dashboard/TopEvents";
 import TopVenues from "../components/dashboard/TopVenues";
+import UpdateEvent from "../components/dashboard/UpdateEvent";
 import Queries from "../components/dashboard/queries";
 
 export default function Dashboard() {
@@ -34,6 +35,10 @@ export default function Dashboard() {
       displayText: "Top Venues",
     },
     {
+      href: "updateEvent",
+      displayText: "Update Event",
+    },
+    {
       href: "queries/list",
       displayText: "Queries",
     },
@@ -53,6 +58,7 @@ export default function Dashboard() {
         <Route exact path="/featureFlag/*" element={<FeatureFlag />} />
         <Route exact path="/topEvents/" element={<TopEvents />} />
         <Route exact path="/topVenues/" element={<TopVenues />} />
+        <Route exact path="/updateEvent/" element={<UpdateEvent />} />
         <Route exact path="/queries/*" element={<Queries />} />
         <Route path="/*" element={<span> Not found </span>} />
       </Routes>

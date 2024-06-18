@@ -125,3 +125,36 @@ export const request = (navigate) => async (method, route, body) => {
     return { error: true };
   }
 };
+
+export const requestFileServer =
+  (navigation) =>
+  async (method, url, body, formData = true, replayed = false) => {
+    const token = localStorage.getItem(SECURE_STORAGE_KEY.ACCESS_TOKEN);
+    const config = {
+      headers: {
+        Authorization: token,
+        ...(formData && { "content-type": "multipart/form-data" }),
+      },
+    };
+    try {
+      const data = await httpRequest(method, url, body, config);
+      return data;
+    } catch (err) {
+      if (err?.status !== 401) {
+        throw err;
+      }
+      if (replayed) {
+        navigation.navigate(ROUTES.LOGIN);
+        throw err;
+      }
+      await refreshAccessToken(navigation);
+      const res = await requestFileServer(navigation)(
+        method,
+        url,
+        body,
+        formData,
+        true
+      );
+      return res;
+    }
+  };

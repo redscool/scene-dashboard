@@ -9,10 +9,10 @@ import {
   getFileUrl,
 } from "../../../utils/misc";
 
-const EventCard = ({ event, style }) => {
+const EventCard = ({ event, onClick }) => {
   const date = getEventCardDateFormat(event.time);
   return (
-    <div className={styles.container}>
+    <div className={styles.container} {...(onClick && { onClick })}>
       <div className={styles.image}>
         <img src={getFileUrl(event.bannerImage)} />
       </div>
@@ -25,11 +25,11 @@ const EventCard = ({ event, style }) => {
         </div>
 
         <div className={styles.abbreviationContainer}>
-        {/* <p className={styles.abbreviation}>{event.abbreviation}</p> */}
-        {/* </div> */}
-        {/* <div className={styles.venueContainer}> */}
-        {/* <img color={colors.secondary} name="location" size={8} /> */}
-        {/* <p className={styles.venue}>{getAddress(event.address)}</p> */}
+          {/* <p className={styles.abbreviation}>{event.abbreviation}</p> */}
+          {/* </div> */}
+          {/* <div className={styles.venueContainer}> */}
+          {/* <img color={colors.secondary} name="location" size={8} /> */}
+          {/* <p className={styles.venue}>{getAddress(event.address)}</p> */}
         </div>
       </div>
     </div>

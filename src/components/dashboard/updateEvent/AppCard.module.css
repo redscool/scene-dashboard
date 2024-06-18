@@ -1,0 +1,52 @@
+.container {
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5vh;
+  margin-bottom: 5vh;
+}
+
+.field {
+  align-items: flex-end;
+  align-self: center;
+  border-bottom: 2px solid #e1ff41;
+  box-sizing: border-box;
+  display: flex;
+  height: 12vh;
+  justify-content: space-between;
+  padding: 0 2vw;
+  width: 80%;
+}
+
+.fieldLabel > p {
+  color: var(--color21);
+  font-size: 2.6vh;
+  font-weight: 700;
+}
+
+.fieldInput > input {
+  background-color: transparent;
+  border: none;
+  color: var(--color21);
+  font-size: 2.6vh;
+  font-weight: 400;
+  margin-bottom: 2vh;
+  outline: none;
+  width: 24vw;
+}
+
+.logo {
+  margin-top: 2vh;
+  align-self: center;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 5vh;
+  border: 1px solid #efefef;
+  overflow: hidden;
+}
+
+.logo > img {
+  width: 10vh;
+  height: 10vh;
+}
