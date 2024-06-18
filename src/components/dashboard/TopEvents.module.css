@@ -56,13 +56,15 @@
 
 .container::-webkit-scrollbar,
 .allContainer::-webkit-scrollbar,
-.selectedContainer::-webkit-scrollbar {
+.selectedContainer::-webkit-scrollbar,
+.flowContainer::-webkit-scrollbar {
   width: 0.3vw;
 }
 
 .container::-webkit-scrollbar-thumb,
 .allContainer::-webkit-scrollbar-thumb,
-.selectedContainer::-webkit-scrollbar-thumb {
+.selectedContainer::-webkit-scrollbar-thumb,
+.flowContainer ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 0.5rem;
 }
@@ -82,4 +84,15 @@
   height: 100vh;
   margin: 0 auto;
   width: 80%;
+}
+
+.flowContainer {
+  margin: 5vh auto;
+  width: 50%;
+}
+
+.appsContainer {
+  display: flex;
+  flex-direction: column;
+  
 }

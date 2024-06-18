@@ -4,12 +4,17 @@ import "./App.css";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import { ServiceContext } from "./utils/ServiceContext";
-import { request, requestWithAccessToken } from "./utils/client";
+import {
+  request,
+  requestFileServer,
+  requestWithAccessToken,
+} from "./utils/client";
 
 const getServiceObject = (navigate) => {
   return {
     request: request(navigate),
     requestWithAccessToken: requestWithAccessToken(navigate),
+    requestFileServer: requestFileServer(navigate),
   };
 };
 
