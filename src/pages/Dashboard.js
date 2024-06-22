@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
 import AddUser from "../components/dashboard/AddUser";
 import Sidebar from "../components/dashboard/Sidebar";
@@ -11,8 +11,12 @@ import TopEvents from "../components/dashboard/TopEvents";
 import TopVenues from "../components/dashboard/TopVenues";
 import UpdateEvent from "../components/dashboard/UpdateEvent";
 import Queries from "../components/dashboard/queries";
+import { ROUTES, SECURE_STORAGE_KEY } from "../utils/constants";
+import useAlert from "../hooks/useAlert";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
+  const { showAlert } = useAlert();
   const links = [
     {
       href: "addorganiser",
@@ -48,6 +52,13 @@ export default function Dashboard() {
   useEffect(() => {
     setSelected(location.pathname.split("/")[2]);
   }, [location]);
+  useEffect(() => {
+    const accessToken = localStorage.getItem(SECURE_STORAGE_KEY.ACCESS_TOKEN);
+    if (!accessToken) {
+      showAlert("Please login...");
+      navigate(ROUTES.LOGIN);
+    }
+  }, []);
   return (
     <div className={styles.page}>
       <Sidebar selected={selected} links={links} />

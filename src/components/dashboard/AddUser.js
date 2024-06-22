@@ -2,17 +2,30 @@ import React, { useContext, useState } from "react";
 
 import styles from "./AddUser.module.css";
 import { ServiceContext } from "../../utils/ServiceContext";
+import useAlert from "../../hooks/useAlert";
 
 export default function AddUser() {
   const [email, setEmail] = useState("");
   const serviceObject = useContext(ServiceContext);
+  const { showAlert } = useAlert();
+
   const handleAddOrganiser = async () => {
-    const response = await serviceObject.requestWithAccessToken(
-      "post",
-      "/api/dashboard/organiser/add",
-      { email }
-    );
-    console.log(response);
+    if (!email) {
+      showAlert("Enter an email.");
+      return;
+    }
+    try {
+      await serviceObject.requestWithAccessToken(
+        "post",
+        "/api/dashboard/organiser/add",
+        { email }
+      );
+      showAlert("User added successfully.");
+      setEmail("");
+    } catch (e) {
+      // TODO: error handling
+      showAlert("Something went wrong.");
+    }
   };
   return (
     <div className={styles.mainContainer}>

@@ -5,6 +5,7 @@ import useService from "../../utils/ServiceContext";
 import EventCard from "./topEvent/EventCard";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import SolidButton from "../auth/SolidButton";
+import useAlert from "../../hooks/useAlert";
 
 export default function TopVenues() {
   const [city, setCity] = useState(0);
@@ -16,6 +17,7 @@ export default function TopVenues() {
   const [selectedVenues, setSelectedVenues] = useState([]);
 
   const { request, requestWithAccessToken } = useService();
+  const { showAlert } = useAlert();
 
   const onDragEnd = (result) => {
     if (!result.destination) return;
@@ -25,12 +27,10 @@ export default function TopVenues() {
       const box = Array.from(
         source === "selected" ? selectedVenues : remainingVenues
       );
-      console.log(box);
       const [draggedItem] = box.splice(result.source.index, 1);
       box.splice(result.destination.index, 0, draggedItem);
       if (source === "selected") setSelectedVenues(box);
       else setRemainingVenues(box);
-      console.log(box);
       return;
     }
     const sBox = Array.from(
@@ -48,8 +48,13 @@ export default function TopVenues() {
   };
 
   const init = async () => {
-    const res = await request("get", "/api/app/cities/", {});
-    setCities(res);
+    try {
+      const res = await request("get", "/api/app/cities/", {});
+      setCities(res);
+    } catch (e) {
+      // TODO: error handling
+      showAlert("Something went wrong.");
+    }
   };
   useEffect(() => {
     init();
@@ -73,13 +78,18 @@ export default function TopVenues() {
 
   const getVenues = async () => {
     if (!city) return;
-    const res = await request("post", "/api/app/search/", {
-      cityKey: cities[city - 1].code,
-      labels: {
-        index: "venue",
-      },
-    });
-    setVenues(res);
+    try {
+      const res = await request("post", "/api/app/search/", {
+        cityKey: cities[city - 1].code,
+        labels: {
+          index: "venue",
+        },
+      });
+      setVenues(res);
+    } catch (e) {
+      // TODO: error handling
+      showAlert("Something went wrong.");
+    }
   };
 
   const handleSubmit = async () => {
@@ -92,7 +102,10 @@ export default function TopVenues() {
         key: "topVenues",
         data,
       });
+      showAlert("Top Venues set successfully.");
     } catch (e) {
+      // TODO: error handling
+      showAlert("Something went wrong.");
       console.log(e);
     }
   };

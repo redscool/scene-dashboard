@@ -6,11 +6,13 @@ import EventCard from "./topEvent/EventCard";
 import SolidButton from "../auth/SolidButton";
 import EventsModal from "./updateEvent/EventsModal";
 import AppCard from "./updateEvent/AppCard";
+import useAlert from "../../hooks/useAlert";
 
 export default function UpdateEvent() {
   const { requestWithAccessToken } = useService();
 
   const [event, setEvent] = useState();
+  const { showAlert } = useAlert();
   const [apps, setApps] = useState([
     {
       iOS: "",
@@ -49,7 +51,10 @@ export default function UpdateEvent() {
         eventId: event.id,
         eventData,
       });
+      showAlert("Event updated successfully.");
     } catch (e) {
+      // TODO: error handling
+      showAlert("Something went wrong.");
       console.log(e);
     }
   };
