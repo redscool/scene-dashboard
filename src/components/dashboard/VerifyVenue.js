@@ -2,17 +2,25 @@ import React, { useContext, useEffect, useState } from "react";
 
 import styles from "./VerifyVenue.module.css";
 import { ServiceContext } from "../../utils/ServiceContext";
+import useAlert from "../../hooks/useAlert";
 
 export default function VerifyVenue() {
   const [venues, setVenues] = useState([]);
   const serviceObject = useContext(ServiceContext);
+  const { showAlert } = useAlert();
+
   const getVenues = async () => {
-    const res = await serviceObject.requestWithAccessToken(
-      "get",
-      "/api/dashboard/venue/pendingvenues",
-      {}
-    );
-    setVenues(res);
+    try {
+      const res = await serviceObject.requestWithAccessToken(
+        "get",
+        "/api/dashboard/venue/pendingvenues",
+        {}
+      );
+      setVenues(res);
+    } catch (e) {
+      // TODO: error handling
+      showAlert("Something went wrong.");
+    }
   };
   useEffect(() => {
     getVenues();
@@ -24,10 +32,11 @@ export default function VerifyVenue() {
         "/api/dashboard/venue/approve",
         { venueId: venue._id }
       );
-
       getVenues();
+      showAlert("Venue approved.");
     } catch (e) {
       // TODO: error handling
+      showAlert("Something went wrong.");
     }
   };
   const requiredKeys = [
@@ -75,6 +84,9 @@ export default function VerifyVenue() {
           </div>
         </div>
       ))}
+      {!venues || venues.length === 0 ? (
+        <p className={styles.warning}>No venues to approve</p>
+      ) : null}
     </div>
   );
 }

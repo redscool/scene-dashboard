@@ -76,10 +76,7 @@ const refreshAccessToken = async (navigate) => {
       },
       {}
     );
-    localStorage.setItem(
-      SECURE_STORAGE_KEY.ACCESS_TOKEN,
-      data.data.accessToken
-    );
+    localStorage.setItem(SECURE_STORAGE_KEY.ACCESS_TOKEN, data.accessToken);
     return true;
   } catch (_e) {
     navigate(ROUTES.LOGIN);

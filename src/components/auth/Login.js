@@ -7,22 +7,32 @@ import TextButton from "./TextButton";
 import { useNavigate } from "react-router-dom";
 import { ROUTES, SECURE_STORAGE_KEY, STORAGE_KEY } from "../../utils/constants";
 import { ServiceContext } from "../../utils/ServiceContext";
+import useAlert from "../../hooks/useAlert";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { showAlert } = useAlert();
 
   const navigate = useNavigate();
   const serviceObject = useContext(ServiceContext);
 
   const handleLogin = async () => {
+    if (!email) {
+      showAlert("Enter email.");
+      return;
+    }
+    if (!password) {
+      showAlert("Enter password.");
+      return;
+    }
     const data = await serviceObject.request("post", "/api/auth/admin/login", {
       email,
       password,
     });
     if (data?.error) {
       // TODO: HandleError
-      // showToast("Something went wrong.");
+      showAlert("Something went wrong.");
     } else {
       const { accessToken, refreshToken, userId } = data;
       localStorage.setItem(SECURE_STORAGE_KEY.ACCESS_TOKEN, accessToken);

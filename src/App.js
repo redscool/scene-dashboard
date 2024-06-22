@@ -9,6 +9,9 @@ import {
   requestFileServer,
   requestWithAccessToken,
 } from "./utils/client";
+import { AlertContext } from "./hooks/useAlert";
+import { useState } from "react";
+import Alert from "./components/Alert";
 
 const getServiceObject = (navigate) => {
   return {
@@ -20,14 +23,26 @@ const getServiceObject = (navigate) => {
 
 function App() {
   const navigate = useNavigate();
+  const [alert, showAlert] = useState();
+
   return (
-    <ServiceContext.Provider value={getServiceObject(navigate)}>
-      <Routes>
-        <Route exact path="/dashboard/*" element={<Dashboard />} />
-        <Route exact path="/auth/*" element={<Auth />} />
-        <Route exact path="/*" element={<h1> not found app</h1>} />
-      </Routes>
-    </ServiceContext.Provider>
+    <>
+      <Alert title={alert} setTitle={showAlert} />
+      <ServiceContext.Provider value={getServiceObject(navigate)}>
+        <AlertContext.Provider
+          value={{
+            alert,
+            showAlert,
+          }}
+        >
+          <Routes>
+            <Route exact path="/dashboard/*" element={<Dashboard />} />
+            <Route exact path="/auth/*" element={<Auth />} />
+            <Route exact path="/*" element={<h1> not found app</h1>} />
+          </Routes>
+        </AlertContext.Provider>
+      </ServiceContext.Provider>
+    </>
   );
 }
 

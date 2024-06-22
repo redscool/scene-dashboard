@@ -5,6 +5,7 @@ import useService from "../../utils/ServiceContext";
 import EventCard from "./topEvent/EventCard";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import SolidButton from "../auth/SolidButton";
+import useAlert from "../../hooks/useAlert";
 
 export default function TopEvents() {
   const [city, setCity] = useState(0);
@@ -16,9 +17,9 @@ export default function TopEvents() {
   const [selectedEvents, setSelectedEvents] = useState([]);
 
   const { request, requestWithAccessToken } = useService();
+  const { showAlert } = useAlert();
 
   const onDragEnd = (result) => {
-    console.log(result);
     if (!result.destination) return;
     const source = result.source.droppableId,
       destination = result.destination.droppableId;
@@ -26,12 +27,10 @@ export default function TopEvents() {
       const box = Array.from(
         source === "selected" ? selectedEvents : remainingEvents
       );
-      console.log(box);
       const [draggedItem] = box.splice(result.source.index, 1);
       box.splice(result.destination.index, 0, draggedItem);
       if (source === "selected") setSelectedEvents(box);
       else setRemainingEvents(box);
-      console.log(box);
       return;
     }
     const sBox = Array.from(
@@ -49,8 +48,13 @@ export default function TopEvents() {
   };
 
   const init = async () => {
-    const res = await request("get", "/api/app/cities/", {});
-    setCities(res);
+    try {
+      const res = await request("get", "/api/app/cities/", {});
+      setCities(res);
+    } catch (e) {
+      // TODO: error handling
+      showAlert("Something went wrong");
+    }
   };
   useEffect(() => {
     init();
@@ -74,26 +78,33 @@ export default function TopEvents() {
 
   const getEvents = async () => {
     if (!city) return;
-    const res = await request("post", "/api/app/search/", {
-      cityKey: cities[city - 1].code,
-      labels: {
-        index: "event",
-      },
-    });
-    setEvents(res);
+    try {
+      const res = await request("post", "/api/app/search/", {
+        cityKey: cities[city - 1].code,
+        labels: {
+          index: "event",
+        },
+      });
+      setEvents(res);
+    } catch (e) {
+      // TODO: error handling
+      showAlert("Something went wrong");
+    }
   };
 
   const handleSubmit = async () => {
     const data = [];
     for (const event of selectedEvents) data.push(event.id);
-    console.log(data);
     try {
       await requestWithAccessToken("patch", "/api/dashboard/appconfig", {
         city: cities[city - 1].code,
         key: "topEvents",
         data,
       });
+      showAlert("Top events set successfully");
     } catch (e) {
+      // TODO: error handling
+      showAlert("Something went wrong");
       console.log(e);
     }
   };

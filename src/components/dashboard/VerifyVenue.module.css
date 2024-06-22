@@ -96,3 +96,9 @@
   font-weight: 500;
   margin: auto;
 }
+
+.warning {
+  margin: auto;
+  font-size: 3vh;
+  color: #efefef;
+}
