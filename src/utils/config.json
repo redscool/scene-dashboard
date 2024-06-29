@@ -1,4 +1,4 @@
 {
-    "SERVER": "http://localhost:5000",
-    "FILE_SERVER": "http://localhost:5002"
+    "SERVER": "https://baljeetkode.com",
+    "FILE_SERVER": "https://d2dgbj1h085qlp.cloudfront.net/"
 }
