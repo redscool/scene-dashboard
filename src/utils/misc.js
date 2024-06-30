@@ -21,7 +21,7 @@ export const convertTimeToHHMMFormat = (time) => {
 };
 
 export const getFileUrl = (file) => {
-  return `${config.FILE_SERVER}/file?id=${file}`;
+  return `${config.FILE_SERVER}/${file}`;
 };
 
 export const getEventCardDateFormat = (time) => {

@@ -5,9 +5,12 @@ import Cropper from "react-cropper";
 import imageCompression from "browser-image-compression";
 import "cropperjs/dist/cropper.css";
 import useService from "../../utils/ServiceContext";
+import useAlert from "../../hooks/useAlert";
 
 export default function UploadImage({ setView, setImage }) {
   const { requestWithAccessToken, requestFileServer } = useService();
+
+  const { showAlert } = useAlert();
 
   const [rawImage, setRawImage] = useState();
   const [previewImage, setPreviewImage] = useState();
@@ -64,6 +67,7 @@ export default function UploadImage({ setView, setImage }) {
         setImage(key);
       } catch (e) {
         // TODO: error handling
+        showAlert("Something went wrong.");
         console.log(e);
       }
     }

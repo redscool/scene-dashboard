@@ -4,7 +4,6 @@ import config from "./config.json";
 import { SECURE_STORAGE_KEY, ROUTES, STORAGE_KEY } from "./constants";
 
 const SERVER = config.SERVER;
-const FILE_SERVER = config.FILE_SERVER;
 
 const getUpdatedUrl = (url, body = {}) => {
   let newUrl = url;
