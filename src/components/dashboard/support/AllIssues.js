@@ -72,7 +72,7 @@ function MyIssues() {
     };
 
     useEffect(() => {
-        // viewAll();
+        viewAll();
     }, [])
     return (
         <div className={styles.issuesContainer}>
@@ -107,7 +107,7 @@ function AllOpenIssues() {
     };
 
     useEffect(() => {
-        // viewAll();
+        viewAll();
     }, [])
     return (
         <div className={styles.issuesContainer}>
