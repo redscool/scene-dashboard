@@ -45,3 +45,39 @@
 .createBtn {
   background-color: var(--color1);
 }
+
+.issuesContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.issuesRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2vh 2vw;
+}
+
+.issueBlockContainer {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  background-color: var(--color18);
+  padding: 2vh 2vw;
+}
+
+.issueBlockContainer > p {
+  margin: 0 0 0 auto;
+}
+
+.issueBlockContainerRow {
+  display: flex;
+  flex-direction: row;
+  padding: 1vh 0;
+}
+
+.issuesContainerHeading {
+  color: var(--color18);
+  margin: 2vh 2vw
+}

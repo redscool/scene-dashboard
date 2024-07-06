@@ -38,7 +38,8 @@ function App() {
           <Routes>
             <Route exact path="/dashboard/*" element={<Dashboard />} />
             <Route exact path="/auth/*" element={<Auth />} />
-            <Route exact path="/*" element={<h1> not found app</h1>} />
+            <Route exact path="/" element={<h1><a href="/dashboard">Dashboard</a></h1>} />
+            <Route exact path="/*" element={<h1> Not found</h1>} />
           </Routes>
         </AlertContext.Provider>
       </ServiceContext.Provider>

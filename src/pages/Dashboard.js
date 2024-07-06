@@ -13,6 +13,7 @@ import UpdateEvent from "../components/dashboard/UpdateEvent";
 import Queries from "../components/dashboard/queries";
 import { ROUTES, SECURE_STORAGE_KEY } from "../utils/constants";
 import useAlert from "../hooks/useAlert";
+import Support from "../components/dashboard/support";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -46,6 +47,10 @@ export default function Dashboard() {
       href: "queries/list",
       displayText: "Queries",
     },
+    {
+      href: "support/allIssues",
+      displayText: "Support",
+    },
   ];
   const location = useLocation();
   const [selected, setSelected] = useState("");
@@ -71,6 +76,7 @@ export default function Dashboard() {
         <Route exact path="/topVenues/" element={<TopVenues />} />
         <Route exact path="/updateEvent/" element={<UpdateEvent />} />
         <Route exact path="/queries/*" element={<Queries />} />
+        <Route exact path="/support/*" element={<Support />} />
         <Route path="/*" element={<span> Not found </span>} />
       </Routes>
     </div>
