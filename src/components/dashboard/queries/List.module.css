@@ -23,7 +23,7 @@
 
 .horizotalDivider {
     background-color: var(--light-container-bg-color);
-    height: 1px;
+    min-height: 1px;
     width: 100%;
 }
 

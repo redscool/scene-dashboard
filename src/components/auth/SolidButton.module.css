@@ -4,7 +4,8 @@
   cursor: pointer;
   display: flex;
   height: 7vh;
-  width: 10vw;
+  padding: 0 1vw;
+  min-width: 10vw;
 }
 
 .container > p {
