@@ -23,11 +23,14 @@ const getServiceObject = (navigate) => {
 
 function App() {
   const navigate = useNavigate();
-  const [alert, showAlert] = useState();
-
+  const [alert, setAlert] = useState();
+  const showAlert = async (alert) => {
+    setAlert(alert);
+    setTimeout(() => setAlert(""), 5000);
+  };
   return (
     <>
-      <Alert title={alert} setTitle={showAlert} />
+      <Alert title={alert} setTitle={setAlert} />
       <ServiceContext.Provider value={getServiceObject(navigate)}>
         <AlertContext.Provider
           value={{
@@ -38,7 +41,15 @@ function App() {
           <Routes>
             <Route exact path="/dashboard/*" element={<Dashboard />} />
             <Route exact path="/auth/*" element={<Auth />} />
-            <Route exact path="/" element={<h1><a href="/dashboard">Dashboard</a></h1>} />
+            <Route
+              exact
+              path="/"
+              element={
+                <h1>
+                  <a href="/dashboard">Dashboard</a>
+                </h1>
+              }
+            />
             <Route exact path="/*" element={<h1> Not found</h1>} />
           </Routes>
         </AlertContext.Provider>
